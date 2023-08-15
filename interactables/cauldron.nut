@@ -68,11 +68,3 @@ function Activate(){
 	SpawnVisual(self.GetOrigin(), "models/darnias/ror2/items/razorwire.mdl", activator);
 
 }
-
-VS.ListenToGameEvent( "player_connect", function( event ){
-    foreach(index, networkid in saved_players){
-        if (event.networkid == networkid){ // Player that joined was a winner before
-            win_players.push(event.userid) // Add his new userid to win_players array
-        }
-    }
-}, "event_player_connect" );
